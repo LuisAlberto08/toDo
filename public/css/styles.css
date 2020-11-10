@@ -19,18 +19,23 @@ html{
     justify-content: space-around;
 }
 
-.item-box{
-    display: flex;
-    justify-content: flex-start;
-    max-width: 250px;
-    max-height: 60px; 
-}
+
 
 .item{
-    margin-top: 0px;
+  min-height: 55px;
+  display: flex;
+  border-bottom: 1px solid #F1F1F1;
+  align-items: baseline;
 }
-.checkbox{
-    margin-right: 10px;
+
+.item-content{
+  flex-grow: 3;
+  text-align: center;
+
+}
+.delete-checkbox{
+  flex-grow: 1;
+  
 }
 
 
