@@ -8,8 +8,8 @@ html{
    margin: 100px auto;
    border-radius: 4px;
    background: #fefefe;
-   max-width: 250px; 
-   max-height: 450px;
+   max-width: 300px; 
+   max-height: 650px;
    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
    justify-content: space-between;
 }
@@ -24,15 +24,16 @@ html{
 .date-container{
     display: flex;
     justify-content: space-around;
-    border-bottom: 1px solid #929292;
+    border-bottom: .5px solid #929292;
 }
 
 
 
 .item-container{
-  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
-  max-width: 240px;
   display: flex;
+  box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.3);
+  max-width: 295px;
+  margin:4px 0px 4px 1px ;
   border: 1px solid #F1F1F1;
   align-items: baseline;
   border-radius: 30px;
