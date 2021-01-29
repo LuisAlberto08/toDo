@@ -6,12 +6,14 @@
             <%= day %>
         </p>
     </div>
-    <div class="item-container">
-        <p class="item-content">
-            <%= addedItems %>
-        </p>
-        <input type="checkbox" class="delete-checkbox">
-    </div>
+    <% addedItems.forEach((item)=>{ %>
+        <div class="item-container">
+            <p class="item-content">
+                <%= item %>
+            </p>
+            <input type="checkbox" class="delete-checkbox">
+        </div>
+    <% }) %>
     <form action="/" class="item" method="post">
                 <div class="text-input-container">
                     <input type="text" name="newItem" placeholder="New Item" autocomplete="off">

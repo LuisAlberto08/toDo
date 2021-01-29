@@ -32,7 +32,6 @@ res.render("list", {day:todayIs , addedItems:items});
 app.post("/", (req , res)=>{
     const item = req.body.newItem;
     items.push(item);
-    console.log(items);
     res.redirect("/");
 })
 
