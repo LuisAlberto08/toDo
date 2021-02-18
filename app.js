@@ -42,24 +42,35 @@ const item3 = new Item({
 
 const defaultItems = [item1, item2, item3];
 
-Item.insertMany(defaultItems, (err)=>{
-  if(err){
-    console.log(err);
-  }else{
-    console.log("successfully added item to the collection")
-  }
-});
+
 
 //Serve Static landing page with EJS
 app.get('/', function (req, res) {
 const todayIs = date.getDate();
-res.render("list", {day:todayIs , addedItems:items});
+Item.find({},(err,searchResults)=>{
+if(searchResults.length === 0){
+  Item.insertMany(defaultItems,(err)=>{
+    if(err){
+      console.log(err);
+    }else{
+      console.log("Default items added");
+    }
+    res.redirect("/");
+  });
+}else{
+res.render("list",{day:todayIs , addedItems:searchResults} )
+}
+});
 });
  
 app.post("/", (req , res)=>{
-    const item = req.body.newItem;
-    items.push(item);
+  const itemName = req.body.newItem;
+  const item = new Item({
+  name:itemName
+});
+  item.save();
     res.redirect("/");
+
 })
 
 // Create Server
